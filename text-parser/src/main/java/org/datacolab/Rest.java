@@ -39,6 +39,15 @@ public class Rest {
 		return utils.getCounter();
 	}
 
+	@GET
+	@Path("/done")
+	@Operation(summary = "Get names of the files already processed", description = "Dummy data")
+	@APIResponse(responseCode = "200", description = "Successful response", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String> getFilesProcessed() {
+		return flow.doneList;
+	}
+
 	@POST
 	@Path("/process")
 	@Consumes(MediaType.APPLICATION_JSON)

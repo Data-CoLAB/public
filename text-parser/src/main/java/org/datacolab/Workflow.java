@@ -3,8 +3,6 @@ package org.datacolab;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -27,8 +25,8 @@ public class Workflow {
 	@Inject
 	Utils utils;
 
-	private List<String> doneList = new ArrayList<>();
-	private List<String> pendingList = new ArrayList<>();
+	List<String> doneList = new ArrayList<>();
+	List<String> pendingList = new ArrayList<>();
 
 	public void processFile(String fileName) {
 		try {
@@ -91,5 +89,4 @@ public class Workflow {
             return "Error loading file: " + e.getMessage();
         }
     }
-
 }
